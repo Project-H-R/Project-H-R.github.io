@@ -10,8 +10,18 @@ function checkPassword() {
   } else {
     document.getElementById("error-message").style.display = "block";
     passwordInput.value = ""
+    if (Number(atob(localStorage.getItem("loginAttempts"))) >= 0) {
+      localStorage.setItem("loginAttempts", btoa(Number(atob(localStorage.getItem("loginAttempts")))+1))
+    } else {
+    localStorage.setItem("loginAttempts", btoa(0))
+    }
+    if (Number(atob(localStorage.getItem("loginAttempts"))) >= 10) {
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
   }
 }
+
+
 
 function checkPWD(e) {
   if (e.keyCode === 13) {
@@ -29,6 +39,7 @@ if (localStorage.getItem('allowed') === btoa("ashnazgdurbatuluk")) {
 
 function Logout() {
   localStorage.setItem("allowed", btoa("no"))
+  window.location.reload();
 }
 
 /**
