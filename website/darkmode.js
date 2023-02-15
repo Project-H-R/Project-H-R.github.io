@@ -39,13 +39,13 @@ async function getname() {
   const supapar = JSON.parse(supautok);
   //const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar)));
   //const supapar3 = JSON.parse(supapar2);
-
+  try{
   const { data, error } = await _supabase.auth.getUser(supapar.access_token);
   if (!error) {
     var yooo = `${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name}`;
     return yooo;
-  } else if (error) { 
-  window.location..replace("/website/401/
+  } } catch (error) { 
+  window.location.replace("/website/401/");
   }
 }
 
