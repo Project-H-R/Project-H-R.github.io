@@ -36,7 +36,7 @@ async function getname() {
 
   const { data, error } = await _supabase.auth.getUser(supapar.access_token);
   if (!error) {
-    var yooo = `${data.user_metadata.first_name} ${data.user_metadata.last_name}`;
+    var yooo = `${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name}`;
     return yooo;
   }
 }
