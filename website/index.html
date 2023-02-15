@@ -58,7 +58,7 @@
         /*data.forEach(function(item){s
             contents += `<div><center>${item.email}</center></div>` 
         })*/
-        contents += `<div><center>${data.user_metadata.first_name} ${data.user_metadata.last_name} - ${data.email} - ${data.user_metadata.username}</center></div>`
+        contents += `<div><center>${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name} - ${data.user.email} - ${data.user.user_metadata.username}</center></div>`
         parent.insertAdjacentHTML('beforeend', contents);
       }
     } catch (error) {
