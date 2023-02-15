@@ -51,7 +51,7 @@
       //const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar)));
       //const supapar3 = JSON.parse(supapar2);
 
-      const {data, error} = await _supabase.auth.api.getUserById(supapar.access_token);
+      const {data, error} = await _supabase.auth.getUser(supapar.access_token);
       if (!error) {
         const parent = document.getElementById('holder')
         let contents = ''
