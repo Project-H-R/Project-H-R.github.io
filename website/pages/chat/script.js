@@ -101,7 +101,7 @@ setInterval(function(){
 
 function isKeyPressed(event) {
   var x = document.getElementById("demo");
-  if (event.altKey) {
+  if (event.ctrlKey) {
     if (maxlength === 150) {
       const yooo = getname()
       yooo.then((name) => {
