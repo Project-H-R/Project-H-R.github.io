@@ -39,21 +39,21 @@
   const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
   async function loadSession() {
     try {
-      const supautok = localStorage.getItem('supabase.auth.token');
-      const supapar = JSON.parse(supautok);
-      const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
-      const supapar3 = JSON.parse(supapar2);
+      const supautok = localStorage.getItem('sb-iiuopgiajxsgfklzrnvw-auth-token');
+      //const supapar = JSON.parse(supautok);
+      //const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
+      const supapar3 = JSON.parse(supapar);
 
       const {data, error} = await _supabase.auth.api.getUser(supapar3.access_token);
       if (!error) {
-        if (data.user_metadata.username === "admin") {
+        if (data.user.user_metadata.username === "admin") {
           const parent = document.getElementById('extra')
           let extra = '<li><a href = ../admin>Admin</a></li>'
           parent.insertAdjacentHTML('beforeend', extra)
 
         }
 
-        console.log(`${data.user_metadata.first_name} ${data.user_metadata.last_name} - ${data.email} - ${data.user_metadata.username}`)
+        console.log(`${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name} - ${data.user.email} - ${data.user.user_metadata.username}`)
         console.log(data)
       }
     } catch (error) {
@@ -91,6 +91,6 @@
     };
   }, 400)
 </script>
-  <script src="https://gamerz.ga/darkmode.js"></script>
+  <script src="../darkmode.js"></script>
 
 </html>
