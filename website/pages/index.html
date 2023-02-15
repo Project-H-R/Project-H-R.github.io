@@ -42,9 +42,9 @@
       const supautok = localStorage.getItem('sb-iiuopgiajxsgfklzrnvw-auth-token');
       //const supapar = JSON.parse(supautok);
       //const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
-      const supapar3 = JSON.parse(supapar);
+      const supapar3 = JSON.parse(supapautok);
 
-      const {data, error} = await _supabase.auth.api.getUser(supapar3.access_token);
+      const {data, error} = await _supabase.auth.getUser(supapar3.access_token);
       if (!error) {
         if (data.user.user_metadata.username === "admin") {
           const parent = document.getElementById('extra')
