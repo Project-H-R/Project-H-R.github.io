@@ -1,10 +1,5 @@
 var currentChat = "chatmatalex"
 
-
-
-  
-
-
 async function sendMessage(persons) {
   async function insertData(person) {
     if (valueBox.value !== dissalowedstring) {
