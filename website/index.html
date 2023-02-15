@@ -26,13 +26,15 @@
     <a href="./profile">Profile</a></br>
     <a href="./pages">Pages</a></br>
     <a href="./games">Games</a></br>
-    <button onclick="await _supabase.auth.signOut()">Signout</button>
+    <button onclick="logout()">Signout</button>
   </center>
 </body>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script>
+  
+  
   //Change with yuor Key and Url
   const SUPABASE_URL = 'https://iiuopgiajxsgfklzrnvw.supabase.co'
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpdW9wZ2lhanhzZ2ZrbHpybnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDQzNzIsImV4cCI6MTk2MzYyMDM3Mn0.Oetpbrm6MoQXzr8ayeRGlRtbPXvBlL3BQ9vBq_26ukU'
@@ -43,6 +45,9 @@
     return new Promise(resolve => setTimeout(resolve, s));
   }
 
+  async function logout*( {
+    await _supabase.auth.signOut()
+  }
   //session viewer
   async function loadSession() {
     try {
