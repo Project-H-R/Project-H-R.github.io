@@ -2,7 +2,11 @@ var currentChat = "chatmatalex"
 
 
 
+const SUPABASE_URL = 'https://iiuopgiajxsgfklzrnvw.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpdW9wZ2lhanhzZ2ZrbHpybnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDQzNzIsImV4cCI6MTk2MzYyMDM3Mn0.Oetpbrm6MoQXzr8ayeRGlRtbPXvBlL3BQ9vBq_26ukU'
 
+const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  
 
 
 async function sendMessage(persons) {
