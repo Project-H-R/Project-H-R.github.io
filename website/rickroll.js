@@ -9,7 +9,7 @@ async function loadSession() {
     //const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
     //const supapar3 = JSON.parse(supapar2);
 
-    const { data, error } = await _supabase.auth.api.getUser(supapar.access_token);
+    const { data, error } = await _supabase.auth.getUser(supapar.access_token);
     if (!error) {
       console.log(`${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name} - ${data.user.email} - ${data.user.user_metadata.username}`)
       console.log(data)
