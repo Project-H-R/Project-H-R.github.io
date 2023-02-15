@@ -37,6 +37,7 @@
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpdW9wZ2lhanhzZ2ZrbHpybnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDQzNzIsImV4cCI6MTk2MzYyMDM3Mn0.Oetpbrm6MoQXzr8ayeRGlRtbPXvBlL3BQ9vBq_26ukU'
 
   const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  
   async function loadSession() {
     try {
       const supautok = localStorage.getItem('sb-iiuopgiajxsgfklzrnvw-auth-token');
@@ -56,11 +57,11 @@
         console.log(`${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name} - ${data.user.email} - ${data.user.user_metadata.username}`)
         console.log(data)
       }
-    } //catch (error) {
+    } catch (error) {
       //console.log(error)
-      //window.location.replace("../401/");
+      window.location.replace("../401/");
 
-   // }
+    }
   }
   //await sleep(5);
   loadSession()
