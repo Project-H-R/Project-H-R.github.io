@@ -44,5 +44,8 @@ async function getname() {
 
 checkkliv = getname()
 checkkliv.then((name) => {
-  if (name === "") { window.location.replace("/401/"); }
+  if (name === "") {
+    console.log("\/\/\/\/\/\/\/\/\/")
+    window.location.replace("/401/");
+  }
 })
