@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Supabase</title>
+    
+</head>
+<body>
+
+<h1>From Supabase</h1>
+<div id="holder"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+//Change with yuor Key and Url
+const SUPABASE_URL = 'https://iiuopgiajxsgfklzrnvw.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpdW9wZ2lhanhzZ2ZrbHpybnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDQzNzIsImV4cCI6MTk2MzYyMDM3Mn0.Oetpbrm6MoQXzr8ayeRGlRtbPXvBlL3BQ9vBq_26ukU'
+
+const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+//posts is table name
+//async function loadData() {
+//    const { data, error } = await _supabase
+//            .from('users')
+//            .select('*')
+//
+//    if(!error) {
+//        //loop display data here
+//        const parent = document.getElementById('holder')
+//
+//        let contents = ''
+//        data.forEach(function(item){
+//            contents += `<div><center>-----------------------------------------</center><center>${item.name} - ${item.username}</center></br><center>${item.password}</center></div>` 
+//        })
+//
+//        parent.insertAdjacentHTML('beforeend', contents)
+//    }
+//
+//}
+//loadData()
+
+//login
+// async function loginUser() {
+//     const {user, session, error} = await _supabase.auth.signIn({
+//         email: '9s.s8@pcsb.org',
+//         password: 'temporary'
+//     }
+// )
+// }
+// loginUser()
+
+//session viewer
+// async function loadSession(){
+//     const supautok = localStorage.getItem('supabase.auth.token');
+//     const supapar = JSON.parse(supautok);
+//     const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
+//     const supapar3 = JSON.parse(supapar2);
+// 
+//     const { data, error } = await _supabase.auth.api.getUser(supapar3.access_token);
+//     if(!error) {
+//         const parent = document.getElementById('holder')
+//         let contents = ''
+//         /*data.forEach(function(item){s
+//             contents += `<div><center>${item.email}</center></div>` 
+//         })*/
+//         contents += `<div><center>${data.user_metadata.first_name} ${data.user_metadata.last_name} - ${data.email} - ${data.user_metadata.username}</center></div>` 
+//         parent.insertAdjacentHTML('beforeend', contents)
+//     }
+// }
+// loadSession()
+
+
+
+//Signsupp 
+// async function signUpUser() {
+//     const { user, session, error } = await _supabase.auth.signUp(
+//     {
+//         email: '9s.s8@pcsb.org',
+//         password: 'temporary',
+//     },
+//     {
+//         data: {
+//             first_name: 'Mateusz',
+//             last_name: 'Jelinski',
+//             username: '9s.s8'
+//            }
+//    }
+//    )
+// }
+// signUpUser()
+
+//Uncomment to use insert, it runs on every reload
+// async function insertData() {
+//     const { data, error } = await _supabase
+//         .from('posts')
+//           .insert([
+//             { title: 'The Shire', body: 'im, the body ladies and gentleman', tag: 'fun' }
+//         ])
+//
+//     console.log(data)
+//     console.log(error)
+// }
+// insertData()
+
+</script>
+
+</body>
+</html>

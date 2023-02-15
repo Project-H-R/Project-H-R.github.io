@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chat</title>
+  <style>
+    table {
+      border: 1px solid black;
+      table-layout: fixed;
+      border-color: black;
+    }
+
+    th {
+      border: 1px solid black;
+      border-color: black;
+    }
+
+    body {
+      background-color: white;
+      color: black;
+      
+    }
+
+    .dark-mode {
+      background-color: #40444b;
+      color: #bcbec0;
+      border-color: #bcbec0;
+
+    }
+
+    a {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <font size="3">
+    <center>
+      <a href="..">Pages</a></br>
+      <input type="text" id="message" name="Message" onkeydown="isKeyPressed(event)">
+      <button id="submit">Submit</button><div id="lengthMessage"></div></br>
+      <button id="darkmode">Toggle Darkmode/Lightmode</button></br>
+
+ <div id="white">
+      <input type="radio" name="chattype" value="General" id="general">
+      <label for="general">General Chat</label>
+      <input type="radio" name="chattype" value="Memes" id="memes">
+      <label for="memes">School Chat</label>
+      <input type="radio" name="chattype" value="Ideas" id="ideas">
+      <label for="ideas">Ideas</label>
+     </div>
+
+
+    </center>
+    </br>
+    <center>
+      <table id="messages">
+        <!--<tr>
+        <th>Name</th>
+        <th>Message</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+      <!--<div id="messages"></div>-->
+      </table>
+    </center>
+  </font>
+</body>
+
+<script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://gamerz.ga/rickroll.js"></script>
+<script src="./script.js"></script>
+<script src="https://gamerz.ga/darkmode.js"></script>
+
+</html>

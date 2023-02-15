@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>List of Pages</title>
+
+  <style>
+    .dark-mode {
+      background-color: #40444b;
+      color: #bcbec0;
+      border-color: #bcbec0;
+    }
+    a{
+        color:red;
+      }
+  </style>
+</head>
+
+<body>
+  <center>
+    <a href="..">Main Page</a></br>
+    <button id="darkmode">Toggle Darkmode/Lightmode</button></br>
+  </center>
+  <ul style="list-style-type:square">
+    <li><a href="./cookieclicker">Cookie Clicker Download</a></li>
+    <li><a href='./chat'>Chat</a></li>
+    <li><a href="https://foster.gamerz.ga" target="_blank">Proxy 1 (same login details)</a></li>
+    <li><!--<a href="https://johanna.gamerz.ga" target="_blank">-->Proxy 2(Same as above) - gotta make the site<!--</a>--></li>
+    <li><!--<a href="https://katerina.gamerz.ga" target="_blank">-->Proxy 3(Same as above) - gotta make the site<!--</a>--></li>
+    <div id="extra"></div>
+  </ul>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+  const SUPABASE_URL = 'https://iiuopgiajxsgfklzrnvw.supabase.co'
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpdW9wZ2lhanhzZ2ZrbHpybnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDQzNzIsImV4cCI6MTk2MzYyMDM3Mn0.Oetpbrm6MoQXzr8ayeRGlRtbPXvBlL3BQ9vBq_26ukU'
+
+  const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  async function loadSession() {
+    try {
+      const supautok = localStorage.getItem('supabase.auth.token');
+      const supapar = JSON.parse(supautok);
+      const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
+      const supapar3 = JSON.parse(supapar2);
+
+      const {data, error} = await _supabase.auth.api.getUser(supapar3.access_token);
+      if (!error) {
+        if (data.user_metadata.username === "admin") {
+          const parent = document.getElementById('extra')
+          let extra = '<li><a href = ../admin>Admin</a></li>'
+          parent.insertAdjacentHTML('beforeend', extra)
+
+        }
+
+        console.log(`${data.user_metadata.first_name} ${data.user_metadata.last_name} - ${data.email} - ${data.user_metadata.username}`)
+        console.log(data)
+      }
+    } catch (error) {
+      //console.log(error)
+      window.location.replace("../401/");
+
+    }
+  }
+  //await sleep(5);
+  loadSession()
+
+  document.getElementById("darkmode").onclick = function() {
+
+        if (localStorage.getItem("darkmode") === "darkmode"){
+        localStorage.setItem("darkmode", "lightmode");
+        } else {
+          localStorage.setItem("darkmode", "darkmode");
+        }
+      }
+
+  setInterval(function(){
+    var element = document.body;
+    if (localStorage.getItem("darkmode") === "darkmode"){
+      try {
+      element.classList.add("dark-mode");
+      } catch(error){
+        
+      }
+    } else if (localStorage.getItem("darkmode") !== "darkmode"){
+      try {
+      element.classList.remove("dark-mode");
+      } catch(error){
+        
+      }
+    };
+  }, 400)
+</script>
+  <script src="https://gamerz.ga/darkmode.js"></script>
+
+</html>

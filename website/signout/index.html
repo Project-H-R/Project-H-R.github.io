@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+//Change with yuor Key and Url
+const SUPABASE_URL = 'https://iiuopgiajxsgfklzrnvw.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpdW9wZ2lhanhzZ2ZrbHpybnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDQzNzIsImV4cCI6MTk2MzYyMDM3Mn0.Oetpbrm6MoQXzr8ayeRGlRtbPXvBlL3BQ9vBq_26ukU'
+
+const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+
+//session viewer
+ async function loadSession(){
+     try {
+     const supautok = localStorage.getItem('supabase.auth.token');
+     const supapar = JSON.parse(supautok);
+     const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
+     const supapar3 = JSON.parse(supapar2);
+ 
+     const { data, error } = await _supabase.auth.api.getUser(supapar3.access_token);
+     if(!error) {
+         const { error } = await _supabase.auth.signOut()
+       window.location.replace("../");
+     }} catch (error) {
+         
+        window.location.replace("../login/");
+
+     }
+ }
+ //await sleep(5);
+ loadSession()
+
+
+</script>
+<script>
+    // Initialize the agent at application startup.
+    const fpPromise = new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.onload = resolve;
+    script.onerror = reject;
+    script.async = true;
+    script.src = 'https://cdn.jsdelivr.net/npm/'
+        + '@fingerprintjs/fingerprintjs-pro@3/dist/fp.min.js';
+    document.head.appendChild(script);
+    })
+    .then(() => FingerprintJS.load({apiKey: '8eckArf0wY6xsKukSMC3', endpoint: 'https://metrics.gamerz.ga'}));
+
+    // Get the visitor identifier when you need it.
+    fpPromise
+    .then(fp => fp.get())
+    .then(result => console.log(result));
+</script>
+
+</body>
+</html>

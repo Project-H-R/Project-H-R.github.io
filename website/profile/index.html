@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Profile</title>
+  <style>
+    .dark-mode {
+      background-color: #40444b;
+      color: #bcbec0;
+      border-color: #bcbec0;
+    }
+
+    a {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <div>
+      <h1 id="welcome"></h1>
+    </div>
+    <a href="/">Go back to the Main Page</a></br>
+    <button id="darkmode">Toggle Darkmode/Lightmode</button></br>
+    <input type="color" id="pfcolor"></input>
+    <button id="pfcolorbutton">Select Name Color (For chat)</button></br>
+    <input type="text" id="password"></input>
+    <button id="passwordbutton">Change password to</button>
+  </center>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://gamerz.ga/rickroll.js"></script>
+<script src="https://gamerz.ga/darkmode.js"></script>
+<script src="./profile.js"></script>
+
+</html>

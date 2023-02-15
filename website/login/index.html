@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <style>
+    .dark-mode {
+      background-color: #40444b;
+      color: #bcbec0;
+      border-color: #bcbec0;
+    }
+  </style>
+</head>
+
+<body>
+  <center><button id="darkmode">Toggle Darkmode/Lightmode</button></br>
+    <!--<form action="./loginapi.html">-->
+    <p><label for="emaill">Email: </label><input type=text name="email" id="emaill"></input>
+    <p><label for="passwordd">Password: </label> <input type=password name="password" id="passwordd"></input>
+    <p><button id="login">Login</button>
+      <!--<input type=submit id="login" value=Login>-->
+      <!--</form>-->
+  </center>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <script>
+    const SUPABASE_URL = 'https://iiuopgiajxsgfklzrnvw.supabase.co'
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpdW9wZ2lhanhzZ2ZrbHpybnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgwNDQzNzIsImV4cCI6MTk2MzYyMDM3Mn0.Oetpbrm6MoQXzr8ayeRGlRtbPXvBlL3BQ9vBq_26ukU'
+
+    let _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+    document.getElementById("login").onclick =
+      async function () {
+        console.log("")
+        const {user, session, error} = await _supabase.auth.signIn({
+          email: document.getElementById("emaill").value,
+          password: document.getElementById("passwordd").value
+        }
+
+        )
+        window.location.replace("../");
+
+      }
+  </script>
+</body>
+<script src="https://gamerz.ga/darkmode.js"></script>
+
+</html>
