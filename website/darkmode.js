@@ -34,7 +34,7 @@ async function getname() {
   //const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar)));
   //const supapar3 = JSON.parse(supapar2);
 
-  const { data, error } = await _supabase.auth.api.getUser(supapar.access_token);
+  const { data, error } = await _supabase.auth.api.getUserById(supapar.access_token);
   if (!error) {
     var yooo = `${data.user_metadata.first_name} ${data.user_metadata.last_name}`;
     return yooo;
