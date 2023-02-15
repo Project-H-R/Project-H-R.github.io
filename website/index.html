@@ -48,7 +48,7 @@
     try {
       const supautok = localStorage.getItem('sb-iiuopgiajxsgfklzrnvw-auth-token');
       const supapar = JSON.parse(supautok);
-      const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
+      const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar)));
       const supapar3 = JSON.parse(supapar2);
 
       const {data, error} = await _supabase.auth.api.getUser(supapar3.access_token);
