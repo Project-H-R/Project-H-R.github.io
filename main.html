@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Download Website</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div id="login-box">
+      <h1>This Page is Password-Protected</h1>
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="button" onclick="checkPassword()" data-key="13" class="key">Submit</button>
+    </div>
+
+    <div id="game-list" style="display: none;">
+      <h1>Games</h1>
+      <ul>
+        <li><a href="Files/" download="download">Cookie Clicker</a></li>
+        <li><a href="Files/" download="download">The Tower V1.1</a></li>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
