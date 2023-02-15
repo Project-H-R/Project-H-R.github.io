@@ -14,7 +14,7 @@ function checkPassword() {
   } else {
     document.getElementById("error-message").style.display = "block";
     passwordInput.value = ""
-    if (Number(atob(localStorage.getItem("loginAttempts"))) >= 0) {
+    if (Number(atob(localStorage.getItem("BadloginAttempts"))) >= 0) {
       localStorage.setItem("BadloginAttempts", btoa(Number(atob(localStorage.getItem("BadloginAttempts")))+1))
     } else {
     localStorage.setItem("BadloginAttempts", btoa(0))
