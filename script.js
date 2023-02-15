@@ -8,6 +8,7 @@ function checkPassword() {
     document.getElementById("game-list").style.display = "block";
   } else {
     document.getElementById("error-message").style.display = "block";
+    passwordInput.value = ""
   }
 }
 
