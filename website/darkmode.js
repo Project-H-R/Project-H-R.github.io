@@ -46,6 +46,7 @@ checkkliv = getname()
 checkkliv.then((name) => {
   if (name === "") {
     console.log("\/\/\/\/\/\/\/\/\/")
-    window.location.replace("/401/");
+    console.log(name);
+    //window.location.replace("/401/");
   }
 })
