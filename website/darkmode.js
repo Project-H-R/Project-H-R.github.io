@@ -44,6 +44,8 @@ async function getname() {
   if (!error) {
     var yooo = `${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name}`;
     return yooo;
+  } else if (error) { 
+  window.location..replace("/website/401/
   }
 }
 
@@ -53,6 +55,6 @@ checkkliv.then((name) => {
   if (name === "") {
     console.log("\/\/\/\/\/\/\/\/\/")
     console.log(name);
-    window.location.replace("/401/");
+    window.location.replace("/website/401/");
   }
 })
