@@ -32,7 +32,7 @@
     document.getElementById("login").onclick =
       async function () {
         console.log("")
-        const {user, session, error} = await _supabase.auth.signIn({
+        const {user, session, error} = await _supabase.auth.signInWithPassword({
           email: document.getElementById("emaill").value,
           password: document.getElementById("passwordd").value
         }
