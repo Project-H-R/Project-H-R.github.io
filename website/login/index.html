@@ -3,24 +3,21 @@
 
 <head>
   <title></title>
-  <style>
-    .dark-mode {
-      background-color: #40444b;
-      color: #bcbec0;
-      border-color: #bcbec0;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-  <center><button id="darkmode">Toggle Darkmode/Lightmode</button></br>
-    <!--<form action="./loginapi.html">-->
-    <p><label for="emaill">Email: </label><input type=text name="email" id="emaill"></input>
-    <p><label for="passwordd">Password: </label> <input type=password name="password" id="passwordd"></input>
-    <p><button id="login">Login</button>
-      <!--<input type=submit id="login" value=Login>-->
-      <!--</form>-->
-  </center>
+  <div class="container">
+    <button id="darkmode" onclick="darkmode()">Toggle Darkmode/Lightmode</button>
+		<div id="form">
+      <label for="emaill">Email:</label>
+      <input type="text" name="email" id="emaill">
+      <label for="passwordd">Password:</label>
+      <input type="password" name="password" id="passwordd">
+      <button id="login">Login</button>
+	  </div>
+
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
   <script>
@@ -44,5 +41,34 @@
   </script>
 </body>
 <script src="../darkmode.js"></script>
+<script>
+function darkmode() {
+  document.getElementById("darkmode").onclick = function() {
 
+    if (localStorage.getItem("darkmode") === "darkmode") {
+      localStorage.setItem("darkmode", "lightmode");
+    } else {
+      localStorage.setItem("darkmode", "darkmode");
+    }
+  }
+
+  setInterval(function() {
+    var element = document.body;
+    if (localStorage.getItem("darkmode") === "darkmode") {
+      try {
+        element.classList.add("dark-mode");
+      } catch (error) {
+
+      }
+    } else if (localStorage.getItem("darkmode") !== "darkmode") {
+      try {
+        element.classList.remove("dark-mode");
+      } catch (error) {
+
+      }
+    };
+  }, 400)
+}
+darkmode()
+</script>
 </html>
