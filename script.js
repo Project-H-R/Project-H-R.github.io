@@ -6,6 +6,7 @@ function checkPassword() {
   if (password === correctPassword) {
     document.getElementById("login-box").style.display = "none";
     document.getElementById("game-list").style.display = "block";
+    localStorage.setItem("allowed", btoa("ashnazgdurbatuluk"))
   } else {
     document.getElementById("error-message").style.display = "block";
     passwordInput.value = ""
@@ -21,6 +22,14 @@ function checkPWD(e) {
 const keys = Array.from(document.querySelectorAll('.key'));
 window.addEventListener('keydown', checkPWD);
 
+if (localStorage.getItem('allowed') === btoa("ashnazgdurbatuluk")) {
+  document.getElementById("login-box").style.display = "none";
+  document.getElementById("game-list").style.display = "block";
+}
+
+function Logout() {
+  localStorage.setItem("allowed", btoa("no"))
+}
 
 /**
 function darkmode() {
