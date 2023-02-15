@@ -6,18 +6,18 @@ async function loadSession() {
   try {
     const supautok = localStorage.getItem('supabase.auth.token');
     const supapar = JSON.parse(supautok);
-    const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
-    const supapar3 = JSON.parse(supapar2);
+    //const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
+    //const supapar3 = JSON.parse(supapar2);
 
-    const { data, error } = await _supabase.auth.api.getUser(supapar3.access_token);
+    const { data, error } = await _supabase.auth.api.getUser(supapar.access_token);
     if (!error) {
-      console.log(`${data.user_metadata.first_name} ${data.user_metadata.last_name} - ${data.email} - ${data.user_metadata.username}`)
+      console.log(`${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name} - ${data.user.email} - ${data.user.user_metadata.username}`)
       console.log(data)
       return data
     }
   } catch (error) {
   
-    window.location.replace("https://gamerz.ga/401");
+    window.location.replace("/website/401");
 
   }
 }
