@@ -29,7 +29,7 @@ function darkmode() {
 darkmode()
 
 async function getname() {
-  const supautok = localStorage.getItem('supabase.auth.token');
+  const supautok = localStorage.getItem('sb-iiuopgiajxsgfklzrnvw-auth-token');
   const supapar = JSON.parse(supautok);
   const supapar2 = JSON.stringify(JSON.parse(JSON.stringify(supapar.currentSession)));
   const supapar3 = JSON.parse(supapar2);
