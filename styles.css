@@ -51,6 +51,9 @@ li {
   margin-bottom: 10px;
 }
 
+button {
+  text-decoration: none;
+}
 /* style for submit button */
 button#loginbutton {
   background-color: #eee;
