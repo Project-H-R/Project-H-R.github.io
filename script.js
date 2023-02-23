@@ -36,10 +36,6 @@ function checkPWD(e) {
 const keys = Array.from(document.querySelectorAll('.key'));
 window.addEventListener('keydown', checkPWD);
 
-if (localStorage.getItem('allowed') === btoa("ashnazgdurbatuluk")) {
-  document.getElementById("login-box").style.display = "none";
-  document.getElementById("game-list").style.display = "block";
-}
 
 function Logout() {
   localStorage.setItem("allowed", btoa("no"))
