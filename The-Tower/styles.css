@@ -1,0 +1,76 @@
+/* Header styles */
+header {
+    background-color: #008CBA;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Download button styles */
+  a.download-button, button.download-button {
+    display: block;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #008CBA;
+    color: white;
+    font-size: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  
+/* Style the dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* Style the dropdown button */
+.dropdown button {
+  background-color: #008CBA;
+  color: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+/* Style the dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown content when the dropdown button is clicked */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  
+  /* Responsive styles */
+  @media only screen and (max-width: 600px) {
+    a.download-button, button.download-button {
+      width: 80%;
+    }
+  }
+  

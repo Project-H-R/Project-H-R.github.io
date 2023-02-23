@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Tower - Download Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div id="content">
+      <!-- Check if user is logged in -->
+      <script>
+        if (localStorage.getItem('allowed') != btoa("ashnazgdurbatuluk")) {
+            window.location.href = "../";
+}
+      </script>
+      <!-- Header -->
+      <center><header>
+        <h1>The Tower - Download Page</h1>
+      </header>
+      <!-- Download buttons -->
+      <div id="downloads">
+        <h2>Downloads</h2>
+        <a class="download-button" href="../files/The Tower (Version 1.2).zip" download>Download Latest Version</a>
+        <div class="dropdown">
+          <button class="download-button">Download Old Versions</button>
+          <div class="dropdown-content">
+            <a href="../files/The Tower (Version 1.1).zip" download>Version 1.1</a>
+            <a href="../files/The Tower (Version 1.2).zip" download>Version 1.2</a>
+          </div>
+        </div>
+      </div>
+    </div></center>
+  </body>
+</html>
