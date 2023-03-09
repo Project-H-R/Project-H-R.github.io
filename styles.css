@@ -54,30 +54,7 @@ li {
 button {
   text-decoration: none;
 }
-/* style for submit button */
-button#loginbutton {
-  background-color: #eee;
-  color: #333;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  margin-top: 10px;
-}
 
-/* hover style for submit button */
-button#loginbutton:hover {
-  background-color: #ddd;
-}
-
-/* style for submit button */
-button#logout {
-  background-color: #eee;
-  color: #333;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  margin-top: 10px;
-}
 
 /* hover style for submit button */
 button#logout:hover {
