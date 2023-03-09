@@ -6,30 +6,16 @@
   </head>
   <body>
     <script src="./script.js"></script>
-    <div id="login-box">
-      <h1>This Page is Password-Protected</h1>
-      <div id="error-message" style="display: none;">Incorrect password. Please try again.</div>
-
-        <label for="password">Enter Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="button" id="loginbutton" onclick="checkPassword()" data-key="13" class="key">Login</button>
-    </div>
 
     <div id="game-list" style="display: none;">
       <h1>Games</h1>
       <ul>
         <li><a id="gamedwld" href="files/Cookie Clicker.zip">Cookie Clicker</a></li>
         <li><a id="gamedwld" href="./The-Tower/" >The Tower</a></li>
+        <li><a id="gamedwld" href="./ai/" >The Tower</a></li>
         <li><button type="button" id="logout" onclick="Logout()">Logout</button></li>
       </ul>
     </div>
 
-    <script>
-      
-if (localStorage.getItem('allowed') === btoa("ashnazgdurbatuluk")) {
-  document.getElementById("login-box").style.display = "none";
-  document.getElementById("game-list").style.display = "block";
-}
-    </script>
   </body>
 </html>
