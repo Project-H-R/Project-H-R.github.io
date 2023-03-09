@@ -1,6 +1,6 @@
 function chat() {
     const url = 'https://api.openai.com/v1/engines/' + document.getElementById('model').value + '/completions';
-    const api_key = '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';
+    const api_key = '${TWINE_PASSWORD}';
     const prompt = document.getElementById('prompt').value;
     const temperature = 1;
     const max_tokens = 3750;
