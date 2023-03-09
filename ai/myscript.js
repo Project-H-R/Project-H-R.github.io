@@ -9,7 +9,7 @@ function chat() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${{ secrets.API_KEY }}`
+        'Authorization': `Bearer ${api_key}`
       },
       body: JSON.stringify({
         prompt,
