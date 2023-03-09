@@ -28,7 +28,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-        env:
+      - env:
           api-key: ${{ secrets.API_KEY }}
       - name: Checkout
         uses: actions/checkout@v3
